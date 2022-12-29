@@ -19,6 +19,7 @@ export LOG_DIR=$OUTPUT_DIR_ROOT/$DATASET/$MODEL-$SUFFIX
 mkdir -p $LOG_DIR
 LOG="$LOG_DIR/$TIME.txt"
 
+mkdir -p "./LanguageGroundedSemseg/ckpt"
 CKPT="./LanguageGroundedSemseg/ckpt/checkpoint-val_miou=10.38-step=127897.ckpt"
 if test -f "$CKPT"; then
     echo "Check point exists."
