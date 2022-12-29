@@ -1,7 +1,14 @@
 #!/bin/bash
 
 set -e
-wget https://www.dropbox.com/s/1vm7rldsuyr5giu/checkpoint-val_miou%3D38.34-step%3D32860.ckpt?dl=1 -O ./LanguageGroundedSemseg/ckpt/checkpoint-val_miou=38.34-step=32860.ckpt
+CKPT="./LanguageGroundedSemseg/ckpt/checkpoint-val_miou=38.34-step=32860.ckpt"
+mkdir -p "./LanguageGroundedSemseg/ckpt"
+if test -f "$CKPT"; then
+    echo "$CKPT exists."
+else
+    echo "Download checkpoint"
+    wget https://www.dropbox.com/s/1vm7rldsuyr5giu/checkpoint-val_miou%3D38.34-step%3D32860.ckpt?dl=1 -O "$CKPT"
+fi
 export PYTHONUNBUFFERED="True"
 # export WEIGHTS_SUFFIX=$3
 # export SUFFIX=$3

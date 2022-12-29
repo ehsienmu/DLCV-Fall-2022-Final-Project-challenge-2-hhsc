@@ -1,4 +1,4 @@
-name: lg_semseg
+name: dlcv_final
 channels:
   - pytorch
   - conda-forge
@@ -194,7 +194,7 @@ dependencies:
     - idna==3.3
     - importlib-metadata==4.12.0
     - json5==0.9.8
-    - jupyter-packaging==0.12.2
+    - jupyter-packaging
     - jupyter-server==1.18.1
     - jupyterlab==3.4.3
     - jupyterlab-server==2.15.0
@@ -209,7 +209,7 @@ dependencies:
     - omegaconf==2.2.2
     - open3d==0.15.2
     - pathtools==0.1.2
-    - pg-op==0.0.0
+    - pg-op==0.0.4
     - pillow==9.2.0
     - promise==2.3
     - protobuf==3.19.4
