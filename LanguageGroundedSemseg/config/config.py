@@ -192,6 +192,7 @@ data_arg.add_argument('--train_limit_numpoints', type=int, default=1800000)
 
 # Point Cloud Dataset
 data_arg.add_argument('--scannet_path', type=str, default='./', help='Scannet online voxelization dataset root dir')
+data_arg.add_argument('--out_data_path', type=str, default='./', help='Our data path')
 
 # Training / test parameters
 train_arg = add_argument_group('Training')

@@ -47,8 +47,8 @@ class ScannetVoxelizationDataset(VoxelizationDataset):
 
     # If trainval.txt does not exist, copy train.txt and add contents from val.txt
     DATA_PATH_FILE = {
-        DatasetPhase.Train: 'train_s.txt',
-        DatasetPhase.Val: 'val_s.txt',
+        DatasetPhase.Train: 'train.txt',
+        DatasetPhase.Val: 'val.txt',
         DatasetPhase.TrainVal: 'trainval.txt',
         DatasetPhase.Test: 'test.txt'
     }
@@ -66,9 +66,11 @@ class ScannetVoxelizationDataset(VoxelizationDataset):
             phase = str2datasetphase_type(phase)
         # Use cropped rooms for train/val
         data_root = config.scannet_path
+        out_data_path = config.out_data_path
         if phase not in [DatasetPhase.Train, DatasetPhase.TrainVal]:
             self.CLIP_BOUND = self.TEST_CLIP_BOUND
-        data_paths = read_txt(os.path.join(data_root, self.DATA_PATH_FILE[phase]))
+        # data_paths = read_txt(os.path.join(data_root, self.DATA_PATH_FILE[phase]))
+        data_paths = read_txt(os.path.join(out_data_path, self.DATA_PATH_FILE[phase]))
         logging.info('Loading {}: {}'.format(self.__class__.__name__, self.DATA_PATH_FILE[phase]))
         super().__init__(
             data_paths,

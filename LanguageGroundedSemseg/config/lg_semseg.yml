@@ -1,4 +1,4 @@
-name: dlcv_final
+name: lg_semseg
 channels:
   - pytorch
   - conda-forge
