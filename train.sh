@@ -5,10 +5,11 @@ export PYTHONUNBUFFERED="True"
 export SUFFIX=ckpt-10-focal-2
 
 export TA_DATA_PATH=`realpath $1`
+export TA_TXT_PATH=`realpath $2`   # expext txt file
 export OUR_DATA_PATH=`realpath ./our_dataset`
 mkdir -p $OUR_DATA_PATH
-python3 split.py --train_file $2/train.txt --split_train $OUR_DATA_PATH/train.txt --split_val $OUR_DATA_PATH/val.txt
-
+python3 split.py --train_file $TA_TXT_PATH --split_train $OUR_DATA_PATH/train.txt --split_val $OUR_DATA_PATH/val.txt
+cp $OUR_DATA_PATH/val.txt $OUR_DATA_PATH/test.txt
 
 export OUTPUT_DIR_ROOT="./train_output"
 

@@ -16,15 +16,12 @@ export PYTHONUNBUFFERED="True"
 
 ##### Prepare datasets ######
 export TA_DATA_PATH=`realpath $1`
+export TA_TXT_PATH=`realpath $2`  # expext txt file
 export OUR_DATA_PATH=`realpath ./our_dataset`
 mkdir -p $OUR_DATA_PATH
-cp $TA_DATA_PATH/*.txt $OUR_DATA_PATH
-if test -f "$CKPT"; then
-    cp $OUR_DATA_PATH/test.txt $OUR_DATA_PATH/train.txt
-    cp $OUR_DATA_PATH/test.txt $OUR_DATA_PATH/val.txt
-else
-    echo "File test.txt not found"
-fi
+cp $TA_TXT_PATH $OUR_DATA_PATH/test.txt
+cp $OUR_DATA_PATH/test.txt $OUR_DATA_PATH/train.txt
+cp $OUR_DATA_PATH/test.txt $OUR_DATA_PATH/val.txt
 
 
 export TIME=$(date +"%Y-%m-%d_%H-%M-%S")
