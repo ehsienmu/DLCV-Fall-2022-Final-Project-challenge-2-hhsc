@@ -1,6 +1,7 @@
 LanguageGroundedSemseg/dataset/*
 LanguageGroundedSemseg/ckpt/*
 LanguageGroundedSemseg/output/*
+iLanguageGroundedSemseg/log/*
 ckpt/*
 LanguageGroundedSemseg/temp_output/*
 # Byte-compiled / optimized / DLL files

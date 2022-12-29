@@ -27,16 +27,10 @@ else
 fi
 
 
-# export PRETRAINED_WEIGHTS="/home/twsbvze943/chiawen/output/Scannet200Voxelization2cmDataset/Res16UNet34D-ckpt-10-focal-2/checkpoint-val_miou=38.34-step=32860.ckpt"
-export OUTPUT_DIR_ROOT="./temp_output"
-mkdir -p $OUTPUT_DIR_ROOT
-
-
 export TIME=$(date +"%Y-%m-%d_%H-%M-%S")
 export LOG_DIR="./log"
 export OUT_DIR=`realpath $3`
 mkdir -p $OUT_DIR
-# Save the experiment detail and dir to the common log file
 mkdir -p $LOG_DIR
 
 LOG="$LOG_DIR/$TIME.txt"
@@ -51,7 +45,7 @@ python3 -m main \
     --batch_size 1 \
     --val_batch_size 1 \
     --scannet_path $TA_DATA_PATH \
-    --out_data_path $OUR_DATA_PATH \
+    --our_data_path $OUR_DATA_PATH \
     --stat_freq 100 \
     --visualize True \
     --visualize_path  $LOG_DIR/visualize \

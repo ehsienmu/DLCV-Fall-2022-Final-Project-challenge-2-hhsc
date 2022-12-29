@@ -127,7 +127,7 @@ dir_arg.add_argument('--weighted_cross_entropy', type=str2bool, default=False,
                      help='Whether to apply some weights to the CE losses')
 dir_arg.add_argument('--instance_sampling_weights', type=str, default='feature_data/tail_split_inst_sampling_weights.pkl',
                      help='A dictionary containing probability weights to pick a category for additional sampling')
-dir_arg.add_argument('--sample_tail_instances', type=str2bool, default=True,
+dir_arg.add_argument('--sample_tail_instances', type=str2bool, default=False,
                      help='Adding new instances on the fly for more balanced sampling')
 dir_arg.add_argument('--bounding_boxes_path', type=str, default='feature_data/full_train_bbs_with_rels.pkl',
                      help='A precomputed dictionary containing bounding boxes of al instances')
@@ -192,7 +192,7 @@ data_arg.add_argument('--train_limit_numpoints', type=int, default=1800000)
 
 # Point Cloud Dataset
 data_arg.add_argument('--scannet_path', type=str, default='./', help='Scannet online voxelization dataset root dir')
-data_arg.add_argument('--out_data_path', type=str, default='./', help='Our data path')
+data_arg.add_argument('--our_data_path', type=str, default='./', help='Our data path')
 
 # Training / test parameters
 train_arg = add_argument_group('Training')
