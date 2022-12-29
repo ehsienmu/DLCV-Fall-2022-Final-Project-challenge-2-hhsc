@@ -8,6 +8,7 @@ We used an Anaconda environment with the dependencies, to install run
 ```sh
 conda env create -f ./LanguageGroundedSemseg/config/lg_semseg.yml
 conda activate lg_semseg
+pip install -r requirements.txt
 ```
 
 Additionally, [MinkowskiEngine](https://github.com/NVIDIA/MinkowskiEngine) has to be installed manually with a specified CUDA version. 
