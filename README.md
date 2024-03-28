@@ -1,6 +1,10 @@
 # DLCV Final Project ( 3D ScanNet200 long-tail segmentation )
+This project is primarily forked from [RozDavid](https://github.com/RozDavid)/[LanguageGroundedSemseg](https://github.com/RozDavid/LanguageGroundedSemseg)
+## Poster
 
-### Installation
+![DLCV_final_hhsc_poster](https://github.com/ehsienmu/DLCV-Fall-2022-Final-Project-challenge-2-hhsc/assets/43429849/906dca68-4e8c-4a9b-be0c-d5e9b88fd5b4)
+
+## Installation
 The codebase was developed and tested on Ubuntu 20.04, with various GPU versions *[RTX_2080, RTX_3060, RXT_3090, RXT_A6000]* and NVCC 11.x
 
 We used an Anaconda environment with the dependencies, to install run 
@@ -22,7 +26,7 @@ pip install pytorch-lightning==1.6.5
 pip install open3d==0.15.2
 ```
 
-# How to run our code?
+## How to run our code?
 
 We expect the dataset directory structure be like:
 ```bash=
